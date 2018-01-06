@@ -6,7 +6,9 @@ import java.util.Objects;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.king.ssh.entity.Person;
@@ -44,6 +46,17 @@ public class PersonController {
 	@RequestMapping(value="/getPersonById")
 	@ResponseBody
 	public Person getPersonById(String id){
+		return personService.getPersonById(id);
+	}
+	
+	/**
+	 * 增加PathVariable路径请求方式获取某个人员信息
+	 * @param id
+	 * @return
+	 */
+	@RequestMapping(value="persons/{id}",method=RequestMethod.GET)
+	@ResponseBody
+	public Person getPerson(@PathVariable("id")String id){
 		return personService.getPersonById(id);
 	}
 	
