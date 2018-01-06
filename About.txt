@@ -1,0 +1,5 @@
+Welcome to use the open-source project.
+hellomvc is a "spring mvc + spring + hibernate + mysql" framework project.
+i will always add or update something to it later.
+
+welcome all of you fork this open-source project and improve ourselves.
